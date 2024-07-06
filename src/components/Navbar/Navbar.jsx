@@ -1,6 +1,6 @@
 import React from 'react'
 import './Navbar.css'
-import logo from '../../assets/np-logo.png'
+import logo from '../../assets/images/np-logo.png'
 import CartWidget from './cart-widget'
 
 const Navbar = () => {
@@ -17,10 +17,6 @@ const Navbar = () => {
         <div className="search-box">
             <input type="text" placeholder='Search' />
             <img src="" alt="" />
-        </div>
-
-        <div className='icons'>
-            <i class='bx bxs-user'></i>
         </div>
        <CartWidget/>
 
