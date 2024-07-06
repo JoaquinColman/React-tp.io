@@ -16,7 +16,6 @@ const Navbar = () => {
 
         <div className="search-box">
             <input type="text" placeholder='Search' />
-            <img src="" alt="" />
         </div>
        <CartWidget/>
 
