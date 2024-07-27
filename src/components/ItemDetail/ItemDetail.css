@@ -1,0 +1,21 @@
+.InfoDes{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+}
+p{
+    margin: 10px;
+    font-size: 18px;
+    color: #000000;
+    font-weight: 700;
+}
+.CardDetail img{
+    max-width: 400px;
+}
+.CardDetail{
+    margin: 120px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
