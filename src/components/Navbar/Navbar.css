@@ -4,7 +4,6 @@
 
 .container{
     width: 100vw;
-    min-height: 100vh;
     background: #ffffff;
 }
 
@@ -30,7 +29,7 @@ ul{
     
 }
 
-ul li{
+ul, li{
     display: inline-block;
     margin: 40px 20px;
     font-size: 18px;

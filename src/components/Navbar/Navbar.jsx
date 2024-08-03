@@ -2,24 +2,27 @@ import React from 'react'
 import './Navbar.css'
 import logo from '../../assets/images/np-logo.png'
 import CartWidget from './cart-widget'
-
+import { NavLink, Link } from 'react-router-dom'
 const Navbar = () => {
   return (
-    <div className='navbar'>
-        <ul>
-            <li className='Man'>MAN</li>
-            <li>|</li>
-            <li className='Woman'>WOMAN</li>
-        </ul>
-
-        <a href="#" className='logo'><img src={logo} alt="#" className='logo'/></a>
-
-        <div className="search-box">
-            <input type="text" placeholder='Search' />
+    <nav>
+        <div className='container'>
+            <ul>
+            <NavLink to={'/category/Men Watches'} className={({isActive}) => (isActive ? 'active' : 'no-active')}><li>MEN</li></NavLink>
+            <NavLink to={'/'} className={({isActive}) => (isActive ? 'active' : 'no-active')}>|</NavLink>
+            <NavLink to={'/category/Woman Watches'} className={({isActive}) => (isActive ? 'active' : 'no-active')}><li>WOMAN</li></NavLink>
+            </ul>
         </div>
-       <CartWidget/>
 
-    </div>
-)
+        <Link to='/' className='logo'>
+        <img src={logo} alt="#" className='logo'/>
+        </Link>
+
+           <div className="search-box">
+            <input type="text" placeholder='Search' />
+            </div>
+            <CartWidget/>
+    </nav>
+    )
 }
 export default Navbar  

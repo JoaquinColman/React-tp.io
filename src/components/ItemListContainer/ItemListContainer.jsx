@@ -1,32 +1,37 @@
-import { useState, useEffect } from 'react';
-import './ItemListContainer.css'
-import {getProducts, getProductByCategory } from '../../asyncMock';
-import  ItemList  from '../ItemList/ItemList';
 
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { getProducts, getProductsByCategory } from '../../asyncMock';
+import ItemList from '../ItemList/ItemList';
+import './ItemListContainer.css';
 
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
-
-    const {categoryId} = useParams();
+    const { categoryId } = useParams();
 
     useEffect(() => {
-        const asyncFunc = categoryId ? getProductByCategory : getProducts
+        const asyncFunc = categoryId ? getProductsByCategory : getProducts;
         asyncFunc(categoryId)
-        .then(response => {
-            setProducts(response)
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    }, [categoryId])
+            .then(response => {
+                if (Array.isArray(response)) {
+                    setProducts(response);
+                } else {
+                    console.error('Expected an array from the API, but got:', response);
+                    setProducts([]); 
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                setProducts([]); 
+            });
+    }, [categoryId]);
 
-    return(
+    return (
         <div>
             <h1>{greeting}</h1>
             <ItemList products={products} />
         </div>
-    )
-}
+    );
+};
 
-export default ItemListContainer
+export default ItemListContainer;
