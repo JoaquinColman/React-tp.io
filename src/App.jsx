@@ -9,7 +9,7 @@ function App() {
   return (
     <CartProvider>
       <div className="App">
-        <BrowserRouter>
+        <BrowserRouter basename="/React-tp.io"> {}
           <Navbar />
           <Routes>
             <Route path="/" element={<ItemListContainer greeting="Trending products" />} />
@@ -24,5 +24,8 @@ function App() {
 }
 
 export default App;
+
+
+
 
 
