@@ -1,4 +1,5 @@
 
+
 * {
     margin: 0;
     padding: 0;
@@ -11,65 +12,62 @@ img {
     height: auto;
 }
 
-
-.Card {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 20px; 
-    justify-content: center; 
-    margin-top: 50px; 
-    padding: 0 10px; 
-    max-width: 500px;
-}
-
-
-article {
+.CardItem {
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px #929292;
     padding: 10px;
     background-color: #ffffff;
-    transition: transform 0.5s; 
+    transition: transform 0.5s;
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
-article:hover {
-    transform: scale(1.1);
+.CardItem:hover {
+    transform: scale(1.05);
 }
 
-p {
-    margin: 5px;
-    font-size: 18px;
-    color: #000000;
-    font-weight: 700;
+.Header {
+    background-color: #f4f4f4;
+    padding: 8px;
+    width: 100%;
 }
 
-
-h2 {
+.ItemHeader {
     margin: 5px;
     font-size: 20px;
     color: #000000;
     font-weight: 700;
 }
 
-
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
+.ItemImg {
+    max-width: 100%;
+    height: auto;
 }
 
-
-button:hover {
-    background-color: #ffffff;
+.Info {
+    margin: 5px;
+    font-size: 18px;
     color: #000000;
-    box-shadow: 0 0 10px #929292;
-    transform: scale(1.1);
-    transition: 0.5s;
+    font-weight: 700;
 }
+
+.ItemFooter {
+    margin-top: 16px;
+}
+
+.Option {
+    text-decoration: none;
+    color: #007BFF;
+    padding: 8px 16px;
+    border: 1px solid #007BFF;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.Option:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
